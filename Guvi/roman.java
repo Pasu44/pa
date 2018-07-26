@@ -1,9 +1,9 @@
 package tutorial;
-	// Program to convert Roman Numerals to Number
+	
 import java.util.*;
 
 public class roman {	
-	    // This function returns value of a Roman symbol
+	
 	    int value(char r)
 	    {
 	        if (r == 'I')
@@ -23,34 +23,28 @@ public class roman {
 	        return -1;
 	    }
 	 
-	    // Finds decimal value of a given romal numeral
+	
 	    int romanToDecimal(String str)
 	    {
-	        // Initialize result
-	        int res = 0;
-	 
+	
+	        int res = 0; 
 	        for (int i=0; i<str.length(); i++)
 	        {System.out.println(i);
-	            // Getting value of symbol s[i]
+	            
 	            int s1 = value(str.charAt(i));
-	 
-	            // Getting value of symbol s[i+1]
 	            if (i+1 <str.length())
 	            {
 	                int s2 = value(str.charAt(i+1));
-	                // Comparing both values
 	                if (s1 >= s2)
 	                {
-	                    // Value of current symbol is greater
-	                    // or equalto the next symbol
 	                    res = res + s1;
 	                }
 	                else
 	                {
 	                    res = res + s2 - s1;
 	                    i++;
-	                   // System.out.println(i);// Value of current symbol is
-	                    // less than the next symbol
+	                 
+	                 
 	                }
 	            }
 	            else
@@ -62,11 +56,10 @@ public class roman {
 	        }
 	        return res;
 	    }
-	    // Driver method
+	    
 	    public static void main(String args[])
 	    {
 	        roman ob = new roman();
-	        // Considering inputs given are valid
 	        String str = "XXV";
 	        System.out.println("Integer form of Roman Numeral" +
 	                           " is " + ob.romanToDecimal(str));
