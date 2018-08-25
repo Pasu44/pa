@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	
+	<style type="text/css">
+		#sli1,#sli2{
+			display: none;
+			padding: 10px;
+			width: 100px;
+			background-color: grey;
+			text-decoration:none; 
+		}
+		li{
+			padding: 10px;
+			float: center;
+			cursor: pointer;
+			list-style-type: none;
+			
+		}
+		#li1{
+			background-color: powderblue;
+			display: inline-block;
+		}
+		#li2{
+			background-color: powderblue;
+			display: inline-block;
+		}
+		
+		
+		
+	</style>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#li1").on({
+				mouseenter:function(){
+					$("#sli1").slideDown(2000);
+				},
+			//	mouseenter:function(){
+					//$("#sli1").css("background-color","black");
+					
+			//	},
+				click:function(){
+					$("#sli1").slideUp();
+				},
+			});
+			$("#li2").on({
+				mouseenter:function(){
+					$("#sli2").slideDown(2000);
+				},
+				
+				click:function(){
+					$("#sli2").slideUp();
+				},
+			});
+		});
+	</script>
+
+</head>
+<body>
+<ul>
+	<li id="li1">Dress</li>
+	<li id="li2">Television</li>
+</ul>
+<ul id="sli1">
+		<li><a href="#" >Shirts</a></li>
+		<li><a href="#" >Sarees</a></li>
+		<li><a href="#" >Dhoti</a></li>
+</ul>
+<ul id="sli2">
+		<li><a herf="https://www.google.co.in/search?q=samsung+tv&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjD3bvS3f7cAhUKuY8KHehjChkQ_AUICygC&biw=1366&bih=631" >Samsung</a></li>
+		<li><a href="https://www.google.co.in/search?biw=1366&bih=631&tbm=isch&sa=1&ei=LlR8W5DNL8vcvATFtKOgAQ&q=onida+tv&oq=onida+tv&gs_l=img.3...15715.20255.0.23039.0.0.0.0.0.0.0.0..0.0....0...1c.1.64.img..0.0.0....0.iUEgSwgi50M" >Onida</a></li>
+		<li><a href="https://www.google.co.in/search?biw=1366&bih=631&tbm=isch&sa=1&ei=SFR8W_T3J4WCvQS3vquQCg&q=panasonic+tv&oq=panasonic+tv&gs_l=img.3...34521.38237.0.39648.0.0.0.0.0.0.0.0..0.0....0...1c.1.64.img..0.0.0....0.ylz2XFrLJxY" >Panasonic</a></li>
+</ul>
+</body>
+</html>

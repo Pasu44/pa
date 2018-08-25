@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+    <style type="text/css">
+    	#drag1{
+    		background: grey;
+    		width: 180px;
+    		height: 160px;
+    		padding: 0.5em;
+    		border-radius: 20px;
+    		cursor: pointer;
+    		/*position: absolute;*/
+    	}
+    	#drag2{
+    		background: orange;
+    		width: 180px;
+    		height: 160px;
+    		padding: 0.5em;
+    		cursor: pointer;
+    		border-radius: 20px;
+    		margin-left: 400px;
+    		/*position: absolute;*/
+    	}
+    	#dra{
+    		background: powderblue;
+    		width: 230px;
+    		height: 100px;
+    		padding: 0.5em;
+    		border-radius: 20px;
+ 			margin-left: 300px;
+ 			margin-top: 50px;
+ 			position: absolute;
+    	}
+    	
+    </style>
+    
+    <script >
+    	$(function(){
+    		$("#drag1").draggable({revert:true});
+    		$("#drag2").draggable({revert:true});
+    		
+    	});
+    	$(document).ready(function(){
+    		$("#dra").droppable({
+    			drop:function(event,ui){
+    				$(this).html(ui.draggable.text());
+					$(this).css("background-color",$("#drag1").css("background-color"));
+					$(this).css("background-color",$("#drag2").css("background-color"));
+					$(this).animate({left:"200px"});
+    			}
+    		});
+    	});
+    </script>
+</head>
+<body>
+  <div id="dra" class="ui-widget-content">
+  	<h1>Department</h1>
+  </div>
+  <div id="drag1" class="ui-widget-content">
+  	<h1>Computer Science and Engineering</h1>
+  </div>
+  <div id="drag2" class="ui-widget-content">
+  	<h1>Electrical Electronic Engineering</h1>
+  </div>
+</body>
+</html>

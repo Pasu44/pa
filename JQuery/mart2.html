@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		
+	</script>
+<style type="text/css">
+	.cc{
+		width:150px;
+		height: 200px;
+	}
+	.box{
+		background-color: powderblue;
+		width: 150px;
+		height: 150px;
+		position: absolute;
+	}
+	table{
+		position: absolute;
+	}
+</style>
+
+</head>
+<body>
+<p>Hai This is Pasupathi</p>
+<!-- <button id="btn1" >Home</button>
+<button id="btn2" style="display: none;">Product</button>
+<button id="btn3" style="display: none;">Service</button>
+<button id="btn4" style="display: none;">Content</button>
+ -->
+ <table>
+ 	<tr >
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn1" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn2" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn3" class="cc"></td>
+ 	</tr>
+ 	<tr >
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn4" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn5" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn6" class="cc"></td>
+ 	</tr>
+ 	<tr >
+ 	<td  ><img src="27481555-desktop-wallpapers.jpg" id="btn7" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg"  id="btn8" class="cc"></td>
+ 	<td ><img src="27481555-desktop-wallpapers.jpg" id="btn9" class="cc"></td>
+ 	</tr>
+ </table>
+ <h1 style="text-align:center;">India is great</h1>
+
+<button id="ex">Expand</button>
+<button id="sh">Shrink</button>
+<button id="mo">Move</button>
+
+
+<script>
+	$(document).ready(function(){
+      	$("table").animate({left:"350px"},2000,0,0);
+      });
+
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				$("#btn2").fadeOut(2000);
+				$("#btn4").fadeOut(2000);
+			});
+			$("#btn2").click(function(){
+				$("#btn1").fadeOut(2000);
+				$("#btn3").fadeOut(2000);
+				$("#btn5").fadeOut(2000);
+				
+			});
+			$("#btn3").click(function(){
+				$("#btn2").fadeOut(2000);
+				$("#btn6").fadeOut(2000);
+			});
+			$("#btn4").click(function(){
+				$("#btn1").fadeOut(2000);
+				$("#btn5").fadeOut(2000);
+				$("#btn7").fadeOut(2000);
+				
+			});
+			$("#btn5").click(function(){
+				$("#btn2").fadeOut(2000);
+				$("#btn4").fadeOut(2000);
+				$("#btn6").fadeOut(2000);
+				$("#btn8").fadeOut(2000);
+				
+			});
+			$("#btn6").click(function(){
+				$("#btn3").fadeOut(2000);
+				$("#btn5").fadeOut(2000);
+				$("#btn9").fadeOut(2000);
+				
+			});
+			$("#btn7").click(function(){
+				$("#btn4").fadeOut(2000);
+				$("#btn8").fadeOut(2000);
+			});
+			$("#btn8").click(function(){
+				$("#btn7").fadeOut(2000);
+				$("#btn5").fadeOut(2000);
+				$("#btn9").fadeOut(2000);
+				
+			});
+			$("#btn9").click(function(){
+				$("#btn6").fadeOut(2000);
+				$("#btn8").fadeOut(2000);
+			});
+			$("#btn1").dblclick(function(){
+				$("#btn2").fadeIn(2000);
+				$("#btn4").fadeIn(1000);
+			});
+			$("#btn2").dblclick(function(){
+				$("#btn1").fadeIn(2000);
+				$("#btn3").fadeIn(1000);
+				$("#btn5").fadeIn(1000);
+				
+			});
+			$("#btn3").dblclick(function(){
+				$("#btn2").fadeIn(2000);
+				$("#btn6").fadeIn(1000);
+			});
+			$("#btn4").dblclick(function(){
+				$("#btn1").fadeIn(2000);
+				$("#btn5").fadeIn(1000);
+				$("#btn7").fadeIn(1000);
+				
+			});
+			$("#btn5").dblclick(function(){
+				$("#btn2").fadeIn(2000);
+				$("#btn4").fadeIn(1000);
+				$("#btn6").fadeIn(1000);
+				$("#btn8").fadeIn(1000);
+				
+			});
+			$("#btn6").dblclick(function(){
+				$("#btn3").fadeIn(2000);
+				$("#btn5").fadeIn(1000);
+				$("#btn9").fadeIn(1000);
+				
+			});
+			$("#btn7").dblclick(function(){
+				$("#btn4").fadeIn(2000);
+				$("#btn8").fadeIn(1000);
+			});
+			$("#btn8").dblclick(function(){
+				$("#btn7").fadeIn(2000);
+				$("#btn5").fadeIn(1000);
+				$("#btn9").fadeIn(1000);
+				
+			});
+			$("#btn9").dblclick(function(){
+				$("#btn6").fadeIn(2000);
+				$("#btn8").fadeIn(1000);
+			});
+			$("#btn").click(function(){
+				
+				$("#btn2").fadeIn();
+				$("#btn3").fadeIn();
+				
+			});
+			$("#btn").click(function(){
+				$("#btn1").hide();
+				$("#btn2").hide();
+				$("#btn4").hide();
+			});
+			$("#btn").click(function(){
+				$("#btn1").hide();
+				$("#btn2").hide();
+				$("#btn3").hide();
+			});
+		});
+      $(document).ready(function(){
+      	$("h1").on({
+
+      		mouseenter:function(){
+      			$("h1").css("background-color","powderblue");
+      		},
+			mouseleave:function(){
+      			$("h1").css("background-color","grey");
+      		},
+      		click:function(){
+      			$("h1").css("background-color","green");
+      		},	
+      	});
+      });
+      
+
+
+      $(document).ready(function(){
+      	$("#ex").click(function(){
+      		$(".box").animate({width:"500px"});
+      		$(".box").animate({height:'500px'});
+      	});
+      	$("#sh").click(function(){
+           $(".box").animate({width:'150px'});
+           $(".box").animate({height:'150px'});
+      	});
+      	$("#mo").click(function(){
+           $(".box").animate({left:'350px'});
+      	});
+      });
+      
+	</script>
+	<div class="box"></div>
+</body>
+</html>

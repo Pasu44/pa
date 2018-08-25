@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<style type="text/css">
+		li{
+			background-color: grey;
+			display:block;
+			float:center;
+            color: linen;
+            text-align: center;
+            list-style-type: none;
+            padding:20px 20px; 
+            cursor: pointer;
+		}
+		#top,#sli,#des{
+			background-color: green;
+			text-align: center;
+			padding: 20px;
+			border:2px solid blue;
+			cursor: pointer;
+		}
+		#sli,#des{
+			padding: 20px;
+  			display: none;
+  			background-color: grey;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+					$("li").toggle(5000);
+					$("#sli").slideDown(2000);
+				    $("#des").slideDown(2000).slideUp(1000);
+			   });
+			});	
+		$(document).ready(function(){
+			$("#fad").on({
+   			   mouseenter:function(){
+   				$("li").fadeOut(4000);
+   			},
+   			   mouseleave:function(){
+   				$("li").fadeIn(4000);
+   			},
+   		});
+	});
+		$(document).ready(function(){
+			$("#top").click(function(){
+				$("#sli").slideDown(2000).slideUp(1000);
+				$("#des").slideDown(2000).slideUp(1000);
+			});
+			$("#sli").click(function(){
+				$("#des").slideDown(2000);
+			});
+		});
+	</script>
+</head>
+<body>
+  <div>
+  <ul>
+  	<li>Home</li>
+  	<li>Academic</li>
+  	<li>Contact</li>
+  </ul>
+  </div>
+  <br><br><br><br><br><br>
+  <button id="fad"> Fading</button>
+  <button> Hide and Show</button>
+  <h3 id="top">Hai</h3>
+  <h3 id="sli">This is Pasupathi</h3>
+  <h3 id="des">Developer and Designer</h3>
+</body>
+</html>

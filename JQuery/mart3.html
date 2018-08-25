@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+<style type="text/css">
+	.box{
+		background-color: #222;
+		width:150px;
+		height: 10px;
+		margin-top: 100px;
+		margin-left: 100px;
+		position: absolute;
+	}
+	.pox{
+		background-color: orange;
+		width:150px;
+		height: 10px;
+		margin-left:300px;
+		margin-top: 200px;
+		position: absolute; 
+	}
+	.dox{
+		background-color: green;
+		width:150px;
+		height: 10px;
+		margin-left:500px;
+		margin-top: 300px;
+		position: absolute;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- <button id="bx">box</button>
+	<button id="px">pox</button>
+	<button id="dx">dox</button> -->
+	<div class="box" ></div>
+	<div class="pox" ></div>
+	<div class="dox" ></div>
+
+	
+<script type="text/javascript">
+	var s1=prompt("Enter the numbers:");
+	var ss=s1.split(",");
+	   $(document).ready(function(){ 
+            $(".box").animate({height:ss[0]});
+            $(".pox").animate({height:ss[1]}); 
+            $(".dox").animate({height:ss[2]}); 
+            $(".box").animate({width:'400px'});
+            $(".pox").animate({width:'400px'}); 
+            $(".dox").animate({width:'400px'}); 
+            $(".box").animate({left:'500px'});
+            $(".pox").animate({left:'400px'}); 
+            $(".dox").animate({left:'300px'}); 
+              
+	   });
+	
+</script>
+</body>
+</html>

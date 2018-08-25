@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animate words</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+    
+    <style type="text/css">
+    	div{
+    		margin-left: 300px;
+    		background-color: powderblue;
+    		width:300px;
+    		height: 100px;
+    		position: absolute;
+    		display: none;
+    		border-radius: 10px;
+    	}	
+    	button{
+    		padding: 20px;
+
+    	}
+    </style>
+	
+	<script type="text/javascript">
+		var x=document.getElementsByTagName('h1');
+		$(document).ready(function(){
+			$("button").click(function(){
+				//var s=$("h1").text();
+				//$("div").css("display","block");
+				$("div").show();
+				$("div").append(x).animate({left:"250px"},2000,0,0);
+				//$("div").animate({width:"300px"});
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Department</h1>
+<h3>CSE</h3>
+<h3>ECE</h3>
+<h3>EEE</h3>
+
+
+<button>Extract</button>
+<div></div>
+</body>
+</html>
