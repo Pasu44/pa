@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Words</title>
+	
+</head>
+<body >
+<h1 style="text-transform: capitalize;">India is One of the wonderful country in all over world</h1>
+<p id="demo">India is the land of people of diverse religions, traditions and castes. People of India represent the essence of our country. The diverse colours of India are its cultures, traditions and religions. It is the land of rich vegetation and wildlife. Art and entertainment is the life of India India is our nation. It is located in the center of South Asia. In world, Republic of India is the seventh largest country by area and the second most populated country after China. India takes honour in being the largest democracy in the world. India is a diverse country with diverse cultures, languages, climates and geography. India is a federation under republic government governed under parliamentary system. India is the land of people of diverse religions, traditions and castes. People of India represent the essence of our country. The diverse colours of India are its cultures, traditions and religions. It is the land of rich vegetation and wildlife. Art and entertainment is the life of India . India is our nation. It is located in the center of South Asia. In world, Republic of India is the seventh largest country by area and the second most populated country after China. India takes honour in being the largest democracy in the world. India is a diverse country with diverse cultures, languages, climates and geography. India is a federation under republic government governed under parliamentary system.</p>
+
+<script type="text/javascript">
+		var str=document.getElementById('demo').textContent;
+		var s=str.split(" ");
+        
+		var count=0,co=0;
+		for(i=0;i<s.length;i++){
+			count=0;	
+			for(j=0;j<s.length;j++){
+				if(s[i]==s[j]){
+					count++;
+			  }
+			} 
+		if(s[i].length>3){
+			document.write(s[i]+" ");
+			if(co<=count){
+				co=count;
+
+			  	val=s[i];
+			}
+		}
+		}
+		document.write("<br><br><b >"+val+"</b>"+"        "+co+" times <br>");
+		window.alert(val +" is "+co+" times");
+		//document.getElementById('demo').style.textAlign="center";
+	</script>
+
+</body>
+</html>
