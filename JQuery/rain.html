@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rain</title>
+	<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<style type="text/css">
+		#draggable{
+		width:150px;
+		height:150px;
+		padding: 10px;
+		background: red;
+		border :solid black 2px;
+		position: fixed;
+		margin-top: 37%;
+		}
+	</style>
+	<script type="text/javascript">
+		var letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		var len=0;
+		var rx;
+		var int="";
+		function randomNumber(max){
+			var rannum=Math.random();
+			var numExp=rannum*max;
+			var numFloor=Math.floor(numExp);
+			return numFloor;
+		}
+		function letterpick(){
+			var random25az=randomNumber(letters.length);
+			var randomletter=letters.charAt(random25az);
+			return randomletter;
+		}
+		function positionpick(){
+			var span=$("<span>");
+			span.css("position","absolute");
+			span.css("top",0);
+			rx=randomNumber(98)+"%";
+			span.css("left",rx);
+			span.text(letterpick());
+			span.appendTo("body");
+			return span;
+		}
+		function animation(){
+			var letterElement=positionpick();
+			letterElement.css("font-size","30px");
+			letterElement.css("color","rgb("+randomNumber(255)+","+randomNumber(255)+","+randomNumber(255)+")");
+			$("#draggable").draggable({axis:'z'});
+			letterElement.animate({top:'95%'},4000,function(){
+				var x=letterElement.position();
+				var l=x.left;
+			 	var p=$("div:first");
+			 	var p1=p.position();
+			 	var d1=p1.left;
+			 	if(l>=d1 && l<=(d1+150))
+			 	{	
+					$("#draggable").append(letterElement.text());
+					len++;
+				
+					if(len>8){
+						$("#draggable").append("<br>");
+						len=0;
+					}
+				}
+				letterElement.fadeOut();
+				$("#draggable").css("overflow","scroll");
+				document.getElementById("demo").innerHTML=len.toString();
+			});
+			$("#stop").click(function(){
+				letterElement.stop();
+			});
+			$("#fullstop").click(function(){
+				clearInterval(int);
+			})
+		}
+		int=setInterval(animation,500);
+	</script>
+</head>
+<body style="background-color: black;">
+<div id="draggable" class="ui-widget-content"></div>
+	<div id="demo" style="color:white;"></div>
+	<button id="stop">Stop</button>
+	<button id="fullstop">Full stop</button>
+</body>
+</html>
